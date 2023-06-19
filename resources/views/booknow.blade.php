@@ -1,4 +1,4 @@
-<!-- @extends('layout')
+ @extends('layout')
 
 @section('title', 'La Bergerie - Book Now')
 @section('description', 'Book your dream vacation in La Bergerie with ease. Our booking page offers a user-friendly platform to reserve your stay in our charming house. Book now and experience the beauty of France.')
@@ -11,8 +11,6 @@
 
 <!-- Page Title -->
   @foreach ($data as  $d)
-      
- 
     <section class="page-title-one">
         <div class="auto-container">
             <div class="page-title-one-content">
@@ -25,9 +23,6 @@
     <!-- End Page Title -->
 
     <!-- Room Section -->
-
-     
-
     <section class="room-one-section style-two pt-0" style="margin-top:30px">
         <div class="auto-container">
             <div class="row">
@@ -55,32 +50,8 @@
                     </div>
                 </div>
                 @endforeach
-                {{-- <div class="col-lg-6 col-md-6">
-                    <div class="room-one-block">
-                        <div class="room-one-like"><i class="far fa-heart"></i></div>
-                        <div class="room-one-image img_hover_3">
-                            <img src="/assets/gallery3.jpg" alt="packages image2">
-                        </div>
-                        <div class="room-one-content style-two">
-                            <div class="room-one-info">Starting From <span>$19.00</span> /Month</div>
-                            <h4 class="room-one-title">Luxury Home.</h4>
-                            <div class="room-one-desc">Description</div>
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <ul class="room-one-info">
-                                        <li>Status: <span>Avaialble</span></li>
-                                        <li>Person: <strong>: 04 - 06</strong></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="room-one-link-btn"><a href={{ route('booknowdetails') }} class="btn-one s-four">Book Now + <span></span></a></div>
-                        </div>
-                    </div>
-                </div> --}}
+              
             </div>
         </div>
     </section>
-
-
-
 @endsection('content')

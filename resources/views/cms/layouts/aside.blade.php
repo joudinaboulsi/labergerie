@@ -51,11 +51,11 @@
 
         </li>
         <li class="menu-item">
-            <a href="javascript:void(0);" class="menu-link menu-toggle">
+            <a href="{{route('AboutPage')}}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-dock-top"></i>
                 <div data-i18n="Account Settings">About</div>
             </a>
-            <ul class="menu-sub">
+            {{-- <ul class="menu-sub">
              <li class="menu-item">
                 <a href="{{route('AboutPage')}}" class="menu-link">
                     <i class="menu-icon tf-icons bx bx-dock-top"></i>
@@ -69,7 +69,7 @@
                     <div data-i18n="Account Settings">About Section two</div>
                 </a>
             </li>
-            </ul>
+            </ul> --}}
       </li>
       <li class="menu-item">
                 <a href="javascript:void(0);" class="menu-link menu-toggle">

@@ -68,8 +68,7 @@
                     <section class="info-section pt-0">
                         <div class="auto-container">
                             <div class="text-center">
-                                <h2 class="info-one-title"><span class="theme-color"> This is an excellent unpretentious place, </span>which offers easy <br> holiday accommodation in relaxed surrounding, <br> and indeed in a very
-                                   special part of Provence  <br> "LE LUBERON". </h2>
+                                <h2 class="info-one-title">{!!$h->title_info !!}</h2>
                             </div>
                             <div class="row">
                                 <div class="col-lg-5">

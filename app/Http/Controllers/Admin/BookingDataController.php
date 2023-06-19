@@ -23,8 +23,8 @@ class BookingDataController extends Controller
       $end = $request->input('end');
       $start = $request->input('start');
   
-  $data = request()->except(['_token']);
-
+       $data = request()->except(['_token']);
+      DataBooking::insert($data);
     //   dd($data);
   
           Mail::send('emails.data', array('name' => $name, 'email' => $email, 'phone' => $phone,
@@ -37,7 +37,6 @@ class BookingDataController extends Controller
        
       
      
-          DataBooking::insert($data);
-             return redirect()->back();
+ return redirect()->back();
 }
 }

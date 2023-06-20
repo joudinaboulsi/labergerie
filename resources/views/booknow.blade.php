@@ -1,14 +1,11 @@
  @extends('layout')
-
 @section('title', 'La Bergerie - Book Now')
 @section('description', 'Book your dream vacation in La Bergerie with ease. Our booking page offers a user-friendly platform to reserve your stay in our charming house. Book now and experience the beauty of France.')
 @section('keywords', 'la bergerie, book, vacation, Le Luberon, booking page, reserve, stay, charming houses, France')
 
 @extends('header')
 @extends('footer')
-
 @section('content')
-
 <!-- Page Title -->
   @foreach ($data as  $d)
     <section class="page-title-one">
@@ -45,12 +42,12 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="room-one-link-btn"><a href={{ route('booknowdetails',$b->id) }} class="btn-one s-four">Book Now + <span></span></a></div>
+                            <div class="room-one-link-btn"><a href={{ route('booknowdetails',[$b->id,$b->price]) }} class="btn-one s-four">Book Now + <span></span></a></div>
                         </div>
                     </div>
                 </div>
                 @endforeach
-              
+
             </div>
         </div>
     </section>

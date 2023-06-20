@@ -7,36 +7,99 @@ use App\Http\Controllers\Controller;
 use Mail;
 use App\DataBooking;
 use Auth;
+use Dompdf\Dompdf;
+use Barryvdh\DomPDF\Facade as PDF;
 class BookingDataController extends Controller
 {
-    //
+    //index 
     public function index(){
         $data = DataBooking::all();
-        return view('cms.booking_data',compact('data'));
+        return view('cms.booking_data.index',compact('data'));
     }
 
+    // sending email plus data to admin
     public function sendRequest(Request $request){
- 
+        //   return $request;
       $name = $request->input('name');
       $email = $request->input('email');
       $phone = $request->input('phone');
       $end = $request->input('end');
       $start = $request->input('start');
-  
+      $price= $request->price;
        $data = request()->except(['_token']);
-      DataBooking::insert($data);
-    //   dd($data);
-  
+    
+      //  dd($data);
+     
+
           Mail::send('emails.data', array('name' => $name, 'email' => $email, 'phone' => $phone,
-           'start'=>$start,'end'=>$end), function($message) use ($email, $name)
+           'start'=>$start,'end'=>$end,'price'=>$price), function($message) use ($email, $name)
           {
               $message->from($email, $name);
               $message->to(Auth::user()->email)->subject('Message from Website');
           });
-          \Session::flash('msg', 'Successfully sent!' );
        
-      
-     
- return redirect()->back();
-}
+         DataBooking::insert([
+            'name'=>$name,
+            'email'=>$email,
+            'phone'=>$phone,
+            'price'=>$price,
+            'start'=>$start,
+            'end'=>$end,
+         ]);
+
+        \Session::flash('msg', 'Successfully sent!' );
+         return redirect()->back();
+    }
+
+
+
+     // edit
+      public function edit($id)
+      {
+          $data = DataBooking::find($id);
+          return view('cms.booking_data.edit', compact('data'));
+      }
+
+
+
+
+
+
+    public function generatePDF($id){
+    
+        $data =DataBooking::where('id',$id)->first();
+    
+        $html = view('cms.pdfData', compact('data'))->render();
+        $dompdf = new Dompdf();
+        $dompdf->loadHtml($html);
+        $dompdf->setPaper('A4', 'portrait');
+        $dompdf->render();
+        return $dompdf->stream();
+       return $pdf->download('contract.pdf');
+    
+    }
+
+
+   //  send Pdf By email 
+
+    public function sendPDF(Request $request,$id){
+    
+        $data =DataBooking::where('id',$id)->first();
+        $email= $data->email;
+
+         // Generate the PDF from the view
+
+            $pdf = PDF::loadView('emails.pdf_mail', compact('data'));
+
+            Mail::send('emails.pdf_mail', array($data), function ($message) use ($data, $pdf) {
+                  $message->from('Message from Website');
+                    $message->to($email)
+                        ->subject('contract')
+                        ->attachData($pdf->output(), "contract.pdf");
+                });
+
+                \Session::flash('msg', 'Successfully sent!' );
+            return redirect()->back();
+    }
+ 
 }

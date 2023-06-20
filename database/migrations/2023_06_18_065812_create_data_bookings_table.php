@@ -18,6 +18,7 @@ class CreateDataBookingsTable extends Migration
             $table->string('name');
             $table->string('email');
             $table->string('phone');
+            $table->string('price');
             $table->date('start');
             $table->date('end');
 

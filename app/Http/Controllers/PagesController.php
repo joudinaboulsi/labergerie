@@ -106,10 +106,11 @@ class PagesController extends Controller
         return view('booknow', compact('book','data'));
     }
 
-    public function booknowdetails($id){
-
+    public function booknowdetails($id,$price){
+;
         $data= BookPage::where('id','1')->get();
         $details= BookNow::where('id',$id)->get();
+        // dd( $details);
         return view('booknowdetails', compact('details','data'));
 
 

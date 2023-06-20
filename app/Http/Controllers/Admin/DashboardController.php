@@ -11,6 +11,6 @@ class DashboardController extends Controller
 {
     public function index(){
         $data = DataBooking::all();
-        return view('cms.booking_data',compact('data'));
+        return view('cms.booking_data.index',compact('data'));
     }
 }

@@ -14,34 +14,6 @@ use App\Http\Controllers\ContactController;
 |
 */
 
-
-// Route::get('/le-luberon', function () {
-//     return view('leluberon');
-// })->name('le-luberon');
-
-// Route::get('/gallery', function () {
-//     return view('gallery');
-// })->name('gallery');
-
-// Route::get('/practical-information', function () {
-//     return view('practicalinformation');
-// })->name('practicalinformation');
-
-// Route::get('/how-to-arrive', function () {
-//     return view('howtoarrive');
-// })->name('howtoarrive');
-
-// Route::get('/book-now', function () {
-//     return view('booknow');
-// })->name('booknow');
-
-// Route::get('/book-now-details', function () {
-//     return view('booknowdetails');
-// })->name('booknowdetails');
-
-// Route::get('/contact', function () {
-//     return view('contact');
-// })->name('contact');
    Route::get('/','PagesController@home')->name('home');
    Route::get('/le-luberon','PagesController@about')->name('le-luberon');
    Route::get('/gallery','PagesController@gallery')->name('gallery');
@@ -49,7 +21,7 @@ use App\Http\Controllers\ContactController;
    Route::get('/how-to-arrive','PagesController@arrive')->name('howtoarrive');
    Route::get('/contact','PagesController@contact')->name('contact');
    Route::get('/book-now','PagesController@bookNow')->name('booknow');
-   Route::get('/bookdetails/{id}','PagesController@booknowdetails')->name('booknowdetails');
+   Route::get('/bookdetails/{id}/{price}','PagesController@booknowdetails')->name('booknowdetails');
 
 
 Route::post('/contact', [ContactController::class, 'getContactForm'])->name('contact_path');
@@ -63,11 +35,6 @@ Route::namespace('Admin') ->prefix('admin') ->group(function () {
    ###################### Seo Page ####################################
    Route::get('/seo','AdminController@index')->name('seo');
    Route::post('/seo/store','AdminController@update')->name('adminSeo');
-
-
-   ###################### Data Page ####################################
-   Route::get('/data','BookingDataController@index')->name('dataBook');
-   Route::post('/data-store','BookingDataController@sendRequest')->name('dataStore');
 
    ###################### Contact Page ####################################
     Route::get('/contactCms','ContactController@contactCms')->name('contactPage');
@@ -138,6 +105,16 @@ Route::namespace('Admin') ->prefix('admin') ->group(function () {
      Route::get('/practical-information','PracticalInfoController@index')->name('PracticalPage');
      Route::post('/practical/store','PracticalInfoController@update')->name('PracticalUpdate');
 
+
+   ###################### Data Page ####################################
+   Route::get('/data','BookingDataController@index')->name('dataBook');
+   Route::post('/data-store','BookingDataController@sendRequest')->name('dataStore');
+   Route::get('/data-edit-{id}','BookingDataController@edit')->name('dataEdit');
+   Route::post('/data-pdf-{id}','BookingDataController@update')->name('dataUpdate');
+
+   Route::get('generate-pdf-{id}','BookingDataController@generatePDF')->name('generatePdf');
+   Route::get('send-pdf-{id}','BookingDataController@sendPDF')->name('sendPdf');
+ 
 
    
 });

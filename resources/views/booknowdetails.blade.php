@@ -30,6 +30,7 @@ accommodations and stunning views.')
         @foreach ($details as $detail )
         <form method="GET" id="" action="" accept-charset="utf-8">
             @csrf
+           
             <div class="row justify-content-center">
                 <div class="col-lg-3 col-md-6 booking-form-column">
                     <!--check in/out-->
@@ -84,6 +85,7 @@ accommodations and stunning views.')
                         <input type="text" class="form-control contact-form-one-input" name="name" value="" id="name"
                             placeholder="Your Name" required>
                     </div>
+                    <input type="hidden" id="price" name="price" value="{{$detail->price}}" />
                     <div class="form-group col-md-6">
                         <label class="contact-form-one-label" for="email">Your Email</label>
                         <input type="email" class="form-control contact-form-one-input" name="email" value="" id="email"

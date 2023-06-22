@@ -1,8 +1,6 @@
 @extends('cms.layouts.master')
 @section('content')
 <div class="container-xxl flex-grow-1 container-p-y">
-
-
     <!-- Basic Layout -->
     <div class="row">
         <div class="col-12">
@@ -27,8 +25,7 @@
                                 value="{{$data->email}}" />
                         </div>
 
-                      
-
+                    
                         <div class="mb-3">
                             <label class="form-label" for="basic-default-fullname">Phone</label>
                             <input type="text" class="form-control" id="basic-default-fullname" name="phone"
@@ -38,20 +35,18 @@
 
                         <div class="mb-3">
                             <label class="form-label" for="basic-default-fullname">Start</label>
-                            <input type="text" class="form-control" id="basic-default-fullname" name="start"
+                            <input type="date" class="form-control" id="basic-default-fullname" name="start"
                                 value="{{$data->start}}" />
                         </div>
                         <div class="mb-3">
                             <label class="form-label" for="basic-default-fullname">End</label>
-                            <input type="text" class="form-control" id="basic-default-fullname" name="end"
+                            <input type="date" class="form-control" id="basic-default-fullname" name="end"
                                 value="{{$data->end}}" />
                         </div>
 
-
-
                        <div class="mb-3">
                             <label class="form-label" for="basic-default-fullname">Price</label>
-                            <input type="text" class="form-control" id="basic-default-fullname" name="price" value="$ {{$data->price}}" />
+                            <input type="text" class="form-control" id="basic-default-fullname" name="price" value="{{$data->price}}" />
                         </div>
 
                         <button type="submit" class="btn btn-primary">Save</button>

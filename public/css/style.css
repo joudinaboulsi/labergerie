@@ -2300,7 +2300,7 @@ h4.nd_booking_date_label {
 }
 
 h2.nd_booking_date_number_from_front {
-    font-size: 102px;
+    font-size: 80px;
     line-height: 1em;
     color: #1c1c1c;
     font-weight: 300;
@@ -3250,8 +3250,7 @@ h3.widget-title {
     font-weight: 400;
     font-family: "Open Sans";
     margin-bottom: 15px;
-     
-            width: 220px;
+        width: 220px;
 }
 
 .about-widget li {
@@ -3310,7 +3309,7 @@ h2.widget-title span {
     font-weight: 400;
     font-family: "Open Sans";
     margin-bottom: 25px;
-    width: 150px;
+    width: 180px;
 }
 
 .contact-widget-social-links ul li {

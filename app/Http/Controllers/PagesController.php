@@ -103,6 +103,7 @@ class PagesController extends Controller
     public function bookNow(){
         $book = BookNow::all();
         $data= BookPage::where('id','1')->get();
+       
         return view('booknow', compact('book','data'));
     }
 

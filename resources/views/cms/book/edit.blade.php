@@ -60,7 +60,10 @@
                             <input type="text" class="form-control" id="basic-default-fullname" name="to_month"
                                value="{{$book->to_month}}"/>
                         </div>
-
+<div class="mb-3">
+    <label class="form-label" for="basic-default-fullname">Per</label>
+    <input type="text" class="form-control" id="basic-default-fullname" name="per" value ="{{$book->subtitle_per}}" />
+</div>
                         <div class="mb-3">
                             <label class="form-label" for="basic-default-fullname">Description</label>
                             <textarea class="form-control" id="basic-default-fullname" name="description"> {!!$book->description !!}</textarea>

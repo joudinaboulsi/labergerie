@@ -21,6 +21,7 @@ class CreateBookNowsTable extends Migration
             $table->string('description')->nullable();
             $table->string('status')->nullable();
             $table->string('person')->nullable();
+            $table->string('subtitle_per')->nullable();
             $table->string('from_day')->nullable();
             $table->string('from_month')->nullable();
             $table->string('to_day')->nullable();

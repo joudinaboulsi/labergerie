@@ -9,12 +9,12 @@
 <body>
  
     <div>
-        <p>Name: {{$data->name }}</p> <br>
-        <p>Email: {{$data->email }}</p> <br>
-        <p>Phone: {{$data->phone }}</p> <br>
-        <p>Price: $ {{$data->price }}</p> <br>
-        <p>Start Date: {{$data->start }}</p> <br>
-        <p>End Date {{$data->end }}</p> <br>
+        <p>Name: {{$data['name'] }}</p> <br>
+        <p>Email: {{$data['email'] }}</p> <br>
+        <p>Phone: {{$data['phone'] }}</p> <br>
+        <p>Price: $ {{$data['price'] }}</p> <br>
+        <p>Start Date: {{$data['start'] }}</p> <br>
+        <p>End Date {{$data['end']}} </p> <br>
        
      
     </div>

@@ -1,6 +1,3 @@
-
-
-
 @section('header')
     <!-- Main Header -->
 <header class="main-header header-style-one">
@@ -11,7 +8,8 @@
             <div class="inner-container">
                 <!--Logo-->
                 <div class="logo-box">
-                    <div class="logo"><a href={{ route('home') }}><img src="/assets/la-bergerie-logo.png" alt="la bergerie logo"></a></div>
+                    <div class="logo"><a href={{ route('home') }}>
+                        <img src="/cms/logo/{{ app('contact')->logo }}" alt="la bergerie logo"></a></div>
                 </div>
                 <!--Nav Box-->
                 <div class="nav-outer">

@@ -43,6 +43,8 @@ class BookNowController extends Controller
             'from_day'=>$request->from_day,
             'to_day'=>$request->to_day,
             'from_month'=>$request->from_month,
+            'subtitle_per'=>$request->per,
+
             'to_month'=>$request->to_month,
         ]);
 
@@ -85,6 +87,7 @@ class BookNowController extends Controller
             'to_day'=>$request->to_day,
             'from_month'=>$request->from_month,
             'to_month'=>$request->to_month,
+              'subtitle_per'=>$request->per,
         ]);
 
 

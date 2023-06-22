@@ -24,7 +24,9 @@ class SettingsController extends Controller
                 '-',
                 time() . $photoLogo->getClientOriginalName()
             );
+
             $photoLogo->move('cms/logo', $newLogo);
+              settings::where('id','1')->update([  'logo'=>$newLogo]);
         }
         settings::where('id','1')->update([
             'phone'=>$request->phone,
@@ -35,7 +37,7 @@ class SettingsController extends Controller
             'main'=>$request->main,
             'title'=>$request->title,
             'subtitle'=>$request->subtitle,
-            'logo'=>$newLogo,
+          
             'updated_at' => Carbon::now(),
         ]);
 

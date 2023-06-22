@@ -94,12 +94,12 @@ accommodations and stunning views.')
 
                     <div class="form-group col-md-6">
                         <label class="contact-form-one-label" for="phone">Start Date</label>
-                        <input type="date" class="form-control contact-form-one-input" name="start" value="" id="phone"
+                        <input type="date" class="form-control contact-form-one-input"id="start-date" name="start" min="<?=date('Y-m-d')?>" value="" id="start"
                             placeholder="Phone Number" required>
                     </div>
                     <div class="form-group col-md-6">
                         <label class="contact-form-one-label" for="phone">End Date</label>
-                        <input type="date" class="form-control contact-form-one-input" name="end" value="" id="phone"
+                        <input type="date" class="form-control contact-form-one-input" id="end-date" name="end" value="" id="end" min="<?php echo date('Y-m-d'); ?>"
                             placeholder="Phone Number" required>
                     </div>
                     <div class="form-group col-md-12">
@@ -118,4 +118,6 @@ accommodations and stunning views.')
         </div>
     </div>
 </div>
+
+
 @endsection('content')

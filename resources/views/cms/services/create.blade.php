@@ -9,7 +9,7 @@
             <div class="card mb-4">
                 <div class="card-header d-flex justify-content-between align-items-center">
                     <h5 class="mb-0">Create</h5>
-                    <small class="text-muted float-end">Slider</small>
+                    <small class="text-muted float-end">Service</small>
                 </div>
                 <div class="card-body">
                     <form method="POST" action="{{route('serviceStore')}}" enctype="multipart/form-data">

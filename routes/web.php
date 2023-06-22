@@ -114,6 +114,7 @@ Route::namespace('Admin') ->prefix('admin') ->group(function () {
 
    Route::get('generate-pdf-{id}','BookingDataController@generatePDF')->name('generatePdf');
    Route::get('send-pdf-{id}','BookingDataController@sendPDF')->name('sendPdf');
+  Route::get('pdfview',array('as'=>'pdfview','uses'=>'BookingDataController@pdfview'));
  
 
    
